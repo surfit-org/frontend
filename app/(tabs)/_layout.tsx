@@ -12,15 +12,18 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: Colors[colorScheme ?? 'dark'].background,
+        },
         tabBarButton: HapticTab,
       }}>
+      <Tabs.Screen name="index" options={{ href: null }} />
       <Tabs.Screen
-        name="index"
+        name="surf"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="water.waves" color={color} />,
         }}
       />
     </Tabs>
